@@ -10,7 +10,10 @@
     <link href="<?php echo URLROOT;?>/css/navbar.css" type="text/css" rel="StyleSheet">
 </head>
 <body>
-    <?php include(APPROOT.'/views/inc/navbar.php');?>
-    <h1>HOMEPAGE!</h1>
+<?php include(APPROOT.'/views/inc/navbar.php');?>
+    <h1>INSURANCES</h1>
+    <?php foreach($data['insurances'] as $insurance):?>
+        <h1><?php echo $insurance->data;?></h1>
+    <?php endforeach;?>
 </body>
 </html>

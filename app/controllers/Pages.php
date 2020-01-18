@@ -14,8 +14,7 @@
         public function about(){
             $this->view('pages/about');
         }
-        
-        public function navbar(){
-            $this->view('inc/navbar');
+        public function contactus(){
+            $this->view('pages/contactus');
         }
     }
