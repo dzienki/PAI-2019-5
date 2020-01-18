@@ -1,0 +1,133 @@
+/*panel nav*/
+body{
+  margin: 0;
+}
+.sidepanel  {
+    position: fixed;
+    z-index: 1;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:#3C4851;
+    overflow-x: hidden;
+    padding-top: 80px;
+  }
+  
+  .sidepanel a {
+    padding: 20px 4px 4px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidepanel span {
+    padding-left: 10px;
+    font-size: 25px;
+    color:#ffffff;
+  }
+  .sidepanel a:hover {
+    color:#000000;
+  }
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  .sidepanel input{
+    width: 250px;
+    border-radius: 0.5em;
+    font-size: 10px;
+    box-sizing: border-box;
+
+  }
+  .sidepanel input[type=submit]{
+    width: 50px;
+  }
+  .navbar{
+    height: 100px;
+    background-color:#3C4851;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  .navbar img{
+      padding-bottom: 5px;
+      padding-top: 5px;      
+      height: 90%;
+      margin: 0 auto;
+      align-items: center;
+  }
+  .navbar i{
+    color:white;
+    font-size: 50px;
+    padding-right: 20px;
+  }
+  .navbar i:hover{
+    color: black;
+  }
+
+  .openbtn {
+    font-size: 60px;
+    cursor: pointer;
+    border: none;
+    background-color:#3C4851;
+    color: white;
+  }
+  
+  .openbtn:hover {
+    color:black;
+  }
+/* search */
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.search input[type=text] {
+  padding: 10px;
+  margin: 0px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  border: 1px solid grey;
+  border-radius: 0;
+  float: left;
+  width: 60%;
+  background: #f1f1f1;
+  line-height: 0px;
+}
+.search{
+  display: inline;
+}
+/* Style the submit button */
+form.search button {
+  float: left;
+  margin:0px;
+  margin-top: 10px;
+  width: 20%;
+  padding: 10px;
+  background: rgb(42, 43, 44);
+  color: white;
+  font-size: 20px;
+  border: 1px solid grey;
+  border-radius: 0;
+  border-left: none;
+  cursor: pointer;
+  box-shadow: none;
+  line-height: 0px;
+}
+
+form.search button:hover {
+  background: #73818d;
+}
+
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
