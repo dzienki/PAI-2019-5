@@ -29,17 +29,9 @@
     if(isset($_SESSION['user_id'])){
         return true;
     }
-    else{
-        return false;
-    }
-}
+    return false;
+  }
+
   function isAdmin(){
-    if(isset($_SESSION['user_role'])){
-      if($_SESSION['user_role']=='admin'){
-        return true;
-      }
-    }
-    else {
-      return false;
-    }
+    return isset($_SESSION['user_role']) && $_SESSION['user_role']=='admin';
   }

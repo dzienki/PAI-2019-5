@@ -5,7 +5,17 @@
         }
 
         public function login(){
-            if($_SERVER['REQUEST_METHOD']=='POST'){
+            if($_SERVER['REQUEST_METHOD']!='POST'){
+                $data=[
+                    'email'=> '',
+                    'password'=>'',
+                    'emailErr'=> '',
+                    'passwordErr'=>'',
+                ];
+
+                return $this->view('users/login', $data);
+            }
+
                 $login='';
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                 $data=[
@@ -47,17 +57,6 @@
                 else{
                 $this->view('users/login', $data);
                 }
-            }
-            else{
-                $data=[
-                    'email'=> '',
-                    'password'=>'',
-                    'emailErr'=> '',
-                    'passwordErr'=>'',
-                ];
-
-                $this->view('users/login', $data);
-            }
         }
         public function register(){
             if(isset($_SESSION['user_id'])){
