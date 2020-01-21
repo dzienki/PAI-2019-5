@@ -2,7 +2,14 @@
 body{
   margin: 0;
 }
+.footer {
+  display: flex;
+  justify-content: center;
+}
 .sidepanel  {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
     position: fixed;
     z-index: 1;
     width: 0px;
@@ -86,8 +93,6 @@ body{
 * {
   box-sizing: border-box;
 }
-
-/* Style the search field */
 form.search input[type=text] {
   padding: 10px;
   margin: 0px;
@@ -104,7 +109,6 @@ form.search input[type=text] {
 .search{
   display: inline;
 }
-/* Style the submit button */
 form.search button {
   float: left;
   margin:0px;

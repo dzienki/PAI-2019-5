@@ -3,6 +3,7 @@
   <meta charset="UTF-8">  
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fa98ee078d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="<?php echo URLROOT;?>/css/navbar.css" type="text/css" rel="StyleSheet">
     <link href="<?php echo URLROOT;?>/css/contactus.css" type="text/css" rel="StyleSheet">
 
@@ -19,16 +20,21 @@
       <img src="<?php echo URLROOT;?>\img\contactus.jpg" style="width:100%">
     </div>
     <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      <form action="<?php echo URLROOT;?>/pages/contactus" method="post">
+        <label for="name">Name</label>
+        <div class="alert alert-danger p-0 border-0" role="alert"><?php echo $data['nameErr'];?></div>
+        <input type="text" name="name" placeholder="Your name..">        
+        <label for="email">Email</label>        
+        <div class="alert alert-danger p-0 border-0" role="alert"><?php echo $data['emailErr'];?></div>
+        <input type="email" name="email" placeholder="Your email..">
         <label for="country">Country</label>
-        <input type="text" id="country" name="firstname" placeholder="Your country..">
+        <div class="alert alert-danger p-0 border-0" role="alert"><?php echo $data['countryErr'];?></div>
+        <input type="text" name="country" placeholder="Your country..">
         <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <div class="alert alert-danger p-0 border-0" role="alert"><?php echo $data['subjectErr'];?></div>
+        <textarea name="subject" placeholder="Write something.." style="height:170px"></textarea>
         <input type="submit" value="Submit">
+        <h1 style="color: #54f978;"><?php echo $data['succesfull'];?></h1>
       </form>
     </div>
   </div>
