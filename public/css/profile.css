@@ -1,14 +1,15 @@
-  form > input {
+  form>input {
     margin: 0 1em 0.5em 1em;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 0;
     border-bottom: 2px solid #3C4851;
     border-radius: 0;
-  
+
     /* font */
     color: black;
     font-size: 1.5em;
   }
+
   form button {
     margin: 0 1em 1em 1em;
     color: green;
@@ -16,8 +17,8 @@
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 2em;
     border: none;
-    
-  
+
+
     line-height: 2em;
     font-size: 1.5em;
   }

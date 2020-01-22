@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo SITENAME?></title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/fa98ee078d.js" crossorigin="anonymous"></script>
-    <link href="<?php echo URLROOT;?>/css/navbar.css" type="text/css" rel="StyleSheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><?php echo SITENAME ?></title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fa98ee078d.js" crossorigin="anonymous"></script>
+  <link href="<?php echo URLROOT; ?>/css/navbar.css" type="text/css" rel="StyleSheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
-    <?php include(APPROOT.'/views/inc/navbar.php');?>
-    <div class="alert alert-danger p-0 border-0" role="alert"><?php flash('data');?></div>
-    <div class="jumbotron">
+  <?php include(APPROOT . '/views/inc/navbar.php'); ?>
+  <div class="alert alert-danger p-0 border-0" role="alert"><?php flash('data'); ?></div>
+  <div class="jumbotron">
     <div class="container">
       <h1 class="display-3">Home Page of Dzienki Insurance</h1>
       <p>Ea nulla eu aute qui aute incididunt. Ad consequat irure aliquip proident nisi reprehenderit sit commodo fugiat sint exercitation. Aliqua labore adipisicing in in ullamco laborum qui. Est ea tempor enim dolor duis non et labore culpa ipsum adipisicing aliqua duis. Nisi proident aliquip excepteur reprehenderit aute laboris culpa cupidatat laborum officia incididunt. Adipisicing elit nostrud et est veniam consectetur dolor esse proident occaecat cillum mollit.</p>
@@ -41,6 +43,7 @@
 
   </div> <!-- /container -->
 
-</main>
+  </main>
 </body>
+
 </html>
