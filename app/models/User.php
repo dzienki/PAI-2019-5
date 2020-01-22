@@ -108,9 +108,21 @@ class User
     }
     public function getMessages()
     {
-        $this->db->query('SELECT * FROM contact;');
-        $rows = $this->db->resultSet();
+        if ($_SESSION['user_role'] = 'admin') {
+            $this->db->query('SELECT * FROM contact;');
+            $rows = $this->db->resultSet();
 
-        return $rows;
+            return $rows;
+        }
+        return false;
+    }
+    public function deleteMessage($id)
+    {
+        if ($_SESSION['user_role'] = 'admin') {
+            $this->db->query('DELETE FROM contact WHERE id = :id');
+            $this->db->bind(':id', $id);
+            return $this->db->execute();
+        }
+        else redirect('pages/index');
     }
 }

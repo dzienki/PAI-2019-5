@@ -297,14 +297,33 @@ class Users extends Controller
             }
         }
     }
-    public function admin()
+    public function admin($id=-1)
     {
         if ($_SESSION['user_role'] == 'admin') {
+            if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+                $data = [];
+                $messages = $this->userModel->getMessages();
+                $iter = 0;
+                foreach ($messages as $message) {
+                    $onepart = [
+                        'id' => $message->id,
+                        'name' => $message->name,
+                        'country' => $message->country,
+                        'email' => $message->email,
+                        'subject' => $message->subject
+                    ];
+                    $data[$iter] = $onepart;
+                    $iter++;
+                }
+                return $this->view('users/admin', $data);
+            }
+            $this->delete($id);
             $data = [];
             $messages = $this->userModel->getMessages();
             $id = 0;
             foreach ($messages as $message) {
                 $onepart = [
+                    'id' => $message->id,
                     'name' => $message->name,
                     'country' => $message->country,
                     'email' => $message->email,
@@ -313,10 +332,22 @@ class Users extends Controller
                 $data[$id] = $onepart;
                 $id++;
             }
+            die("elo");
             return $this->view('users/admin', $data);
+            exit();
         }
         flash('data', 'You have no admin permission!');
         redirect('pages/index');
+    }
+
+    public function delete($data)
+    {
+        if ($this->userModel->deleteMessage($data)) {
+            print json_encode(array('code' => 1));
+            die("eki");
+        }
+        print json_encode(array('code' => 0));
+        exit();
     }
     public function createUserSession($user)
     {

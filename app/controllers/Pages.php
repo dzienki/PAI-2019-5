@@ -32,43 +32,20 @@ class Pages extends Controller
 
             return $this->view('pages/contactus', $data);
         }
-
+        header('Content-Type: application/json');
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         $data = [
             'email' => trim($_POST['email']),
             'name' => trim($_POST['name']),
             'country' => trim($_POST['country']),
-            'subject' => trim($_POST['subject']),
-            'emailErr' => '',
-            'nameErr' => '',
-            'countryErr' => '',
-            'subjectErr' => '',
-            'succesfull' => ''
+            'subject' => trim($_POST['subject'])
         ];
-        if (empty($data['email'])) {
-            $data['emailErr'] = 'Please insert email';
+
+        if ($this->userModel->sendMessage($data)) {
+            print json_encode(array('message' => 'Email successfully sent!', 'code' => 1));
+            exit();
         }
-        if (empty($data['name'])) {
-            $data['nameErr'] = 'Please insert name';
-        }
-        if (empty($data['country'])) {
-            $data['countryErr'] = 'Please insert country';
-        }
-        if (empty($data['subject'])) {
-            $data['subjectErr'] = 'Please type your message';
-        }
-        if (
-            empty($data['emailErr']) && empty($data['nameErr'])
-            && empty($data['countryErr']) && empty($data['subjectErr'])
-        ) {
-            if ($this->userModel->sendMessage($data)) {
-                $data['succesfull'] = 'Message succesfull send';
-                $this->view('pages/contactus', $data);
-            } else {
-                $data['succesfull'] = 'Error with sending message';
-                $this->view('pages/contactus', $data);
-            }
-        }
-        $this->view('pages/contactus', $data);
+        print json_encode(array('message' => 'Email was not successfully sent!', 'code' => 0));
+            exit();
     }
 }

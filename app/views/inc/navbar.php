@@ -40,5 +40,4 @@
   <?php else : ?>
     <a href="<?php echo URLROOT; ?>/users/profile"><i class="fas fa-user" style="color: #72c183;"><?php echo $_SESSION['user_login']; ?></i></a>
   <?php endif; ?>
-  <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 </div>

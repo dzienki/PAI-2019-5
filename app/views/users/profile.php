@@ -33,6 +33,7 @@
       <button type="save"><?php echo $data['button'] ?></button>
     </form>
   </div>
+  <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 </body>
 
 </html>

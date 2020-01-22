@@ -38,6 +38,7 @@
       <span id="registertxt"> If you have account login <a href="<?php echo URLROOT ?>/users/login">here</a></span>
     </form>
   </div>
+  <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 </body>
 
 </html>

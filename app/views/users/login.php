@@ -27,6 +27,7 @@
       <span id="registertxt"> If you don't have account register <a href="<?php echo URLROOT ?>/users/register">here</a></span>
     </form>
   </div>
+  <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 </body>
 
 </html>
