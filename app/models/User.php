@@ -125,4 +125,14 @@ class User
         }
         else redirect('pages/index');
     }
+    public function createOrUpdateInsuranceView()
+    {
+        $this->db->query('CREATE OR REPLACE VIEW wholeInsurance AS SELECT user.email, insurance.license_plate, insurance.costOfInsurance FROM user INNER JOIN insurance WHERE user.id = insurance.user_id;');
+        return $this->db->execute();
+    }
+    public function getWholeInsurances(){
+        $this->db->query('SELECT * FROM wholeInsurance');
+        $results= $this->db->resultSet();
+        return $results;
+    }
 }

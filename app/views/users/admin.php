@@ -16,6 +16,7 @@
 <body>
   <?php include(APPROOT . '/views/inc/navbar.php'); ?>
   <div class="container" id="messagesTable">
+    <h1>MESSAGES</h1>
     <table class="table m-4">
       <thead>
         <tr>

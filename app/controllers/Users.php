@@ -297,7 +297,7 @@ class Users extends Controller
             }
         }
     }
-    public function admin($id=-1)
+    public function admin($id = -1)
     {
         if ($_SESSION['user_role'] == 'admin') {
             if ($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -332,19 +332,35 @@ class Users extends Controller
                 $data[$id] = $onepart;
                 $id++;
             }
-            die("elo");
             return $this->view('users/admin', $data);
             exit();
         }
         flash('data', 'You have no admin permission!');
         redirect('pages/index');
     }
+    public function adminInsurance()
+    {
+        if ($_SESSION['user_role'] == 'admin') {
+            $data = [];
+            $insurances=$this->userModel->getWholeInsurances();
+            $id=0;
+            foreach($insurances as $insurance){
+                $row = [
+                    'email'=>$insurance->email,
+                    'license_plate'=>$insurance->license_plate,
+                    'costOfInsurance'=>$insurance->costOfInsurance,
+                ];
+                $data[$id]=$row;
+                $id++;
+            }
+            return $this->view('users/adminInsurance', $data);
+        }
+    }
 
     public function delete($data)
     {
         if ($this->userModel->deleteMessage($data)) {
             print json_encode(array('code' => 1));
-            die("eki");
         }
         print json_encode(array('code' => 0));
         exit();

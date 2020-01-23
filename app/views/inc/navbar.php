@@ -11,7 +11,8 @@
       <a href="<?php echo URLROOT; ?>/users/register">Register</a>
     <?php endif; ?>
     <?php if (isAdmin()) : ?>
-      <a href="<?php echo URLROOT; ?>/users/admin">Admin Panel</a>
+      <a href="<?php echo URLROOT; ?>/users/admin">Whole Messages</a>
+      <a href="<?php echo URLROOT; ?>/users/adminInsurance">Whole Insurances</a>
     <?php endif; ?>
     <a href="<?php echo URLROOT; ?>/pages/about">About us</a>
     <a href="<?php echo URLROOT; ?>/pages/contactus">Contact</a>
